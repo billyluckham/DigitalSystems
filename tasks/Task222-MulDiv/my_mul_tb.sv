@@ -1,4 +1,4 @@
-module mul_tb;
+module my_mul_tb;
 
 parameter N = 4;
 
