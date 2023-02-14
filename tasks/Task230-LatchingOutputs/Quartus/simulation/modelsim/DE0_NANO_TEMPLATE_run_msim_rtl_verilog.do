@@ -5,8 +5,5 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vlog -vlog01compat -work work +incdir+C:/git/DigitalSystems/tasks/Task224-Decoders/Quartus {C:/git/DigitalSystems/tasks/Task224-Decoders/Quartus/pll_main.v}
-vlog -vlog01compat -work work +incdir+C:/git/DigitalSystems/tasks/Task224-Decoders/Quartus/db {C:/git/DigitalSystems/tasks/Task224-Decoders/Quartus/db/pll_main_altpll.v}
-vlog -sv -work work +incdir+C:/git/DigitalSystems/tasks/Task224-Decoders/Quartus {C:/git/DigitalSystems/tasks/Task224-Decoders/Quartus/clk_div_N.sv}
-vlog -sv -work work +incdir+C:/git/DigitalSystems/tasks/Task224-Decoders/Quartus {C:/git/DigitalSystems/tasks/Task224-Decoders/Quartus/decoder_N.sv}
+vlog -sv -work work +incdir+C:/Users/luckh/OneDrive/Documents/DigitalSystems/tasks/Task230-LatchingOutputs {C:/Users/luckh/OneDrive/Documents/DigitalSystems/tasks/Task230-LatchingOutputs/srgate.sv}
 
