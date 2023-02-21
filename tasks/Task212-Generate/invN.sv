@@ -5,9 +5,8 @@ module invN #(parameter N=4) (output logic[N-1:0] Y, input logic[N-1:0] X);
 genvar i;
 genvar j;
 
-
 generate 
- for (i=0; i<N; i=i+1) 
+ for (i=0; i<N; i=i+2) 
  begin : i_loop1
 	not ui (Y[i], X[i]);
  end
