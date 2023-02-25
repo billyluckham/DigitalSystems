@@ -20,10 +20,79 @@ end
 initial begin
    //Generate clock signal here
 	CLK = 0;
-	repeat(30)
+	repeat(50)
 	#10ps CLK = ~CLK;
 end
 
+// Define a task to check the output 'Q' against the expected value 'Q_expected'
+  task check(logic [3:0] Y_expected);
+    	for(int i=0; i<16; i++) begin
+		assert (Y == Y_expected) $display ("Y = %d", Y_expected); 
+		else $error("Output Mismatch: Expected %d but got %d", Y_expected, Y);
+		Y_expected <= Y_expected +1;
+		@(posedge CLK);
+		end
+  endtask
+
+// Test sequence
+  initial begin
+    // Test case 1: Counter starts at 0, counts up to 16
+	$display("This works");
+	@(posedge CLK);
+	check(4'b0000);
+
+	@(posedge CLK);
+	check(4'b0001);
+
+	@(posedge CLK);
+	check(4'b0010);
+	
+	@(posedge CLK);
+	check(4'b0011);
+
+	@(posedge CLK);
+	check(4'b0100);
+
+	@(posedge CLK);
+	check(4'b0101);
+
+	@(posedge CLK);
+	check(4'b0110);
+
+	@(posedge CLK);
+	check(4'b0111);
+
+	@(posedge CLK);
+	check(4'b0000);
+
+	@(posedge CLK);
+	check(4'b1000);
+
+	@(posedge CLK);
+	check(4'b1001);
+
+	@(posedge CLK);
+	check(4'b1010);
+
+	@(posedge CLK);
+	check(4'b1011);
+
+	@(posedge CLK);
+	check(4'b1100);
+
+	@(posedge CLK);
+	check(4'b1101);
+
+	@(posedge CLK);
+	check(4'b1110);
+
+	@(posedge CLK);
+	check(4'b1111);
+	
+	
+  end
+
+/*
 //Input Stimulus
 initial begin
 	$display("Begin testing");
@@ -49,6 +118,6 @@ initial begin
 
 	end
 
-	
+	*/
 
 endmodule
